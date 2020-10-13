@@ -35,7 +35,7 @@ function initDND() {
             //remove dragging class
             draggable.classList.remove('dragging');
             if (ghostBox.parentNode) {
-                //ghostBox.parentNode.removeChild(ghostBox);
+                ghostBox.parentNode.removeChild(ghostBox);
             }
         })
 
