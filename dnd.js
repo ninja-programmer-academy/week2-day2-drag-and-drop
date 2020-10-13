@@ -1,6 +1,8 @@
 const boxes = document.getElementById("boxes");
 for (let i=0; i<=20; i++) {
     let box = document.createElement("div");
+    //add "draggable" feature to div
+    //ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable
     box.draggable = true;
     box.classList.add("box");
     box.style.backgroundColor = Math.floor(Math.random()*16777215).toString(16);
