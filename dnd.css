@@ -11,6 +11,21 @@
     display: inline-block;
 }
 #boxes > .box.dragging {
+    border: 5px solid red;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px -10px red;
+  }
+  to {
+    box-shadow: 0 0 10px 10px red;
+  }
+}
+
+#boxes > .box.ghost {
     border: 5px dashed black;
+    pointer-events: none;
     opacity: 0.2;
 }
