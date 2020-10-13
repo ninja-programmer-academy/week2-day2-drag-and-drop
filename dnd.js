@@ -1,6 +1,7 @@
 const boxes = document.getElementById("boxes");
 for (let i=0; i<=20; i++) {
     let box = document.createElement("div");
+    box.innerHTML = `${i}`;
     //add "draggable" feature to div
     //ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable
     box.draggable = true;
@@ -26,6 +27,7 @@ function initDND() {
         draggable.addEventListener('dragstart', () => {
             //give our box that is currently being dragged over a class to help us find it later
             ghostBox.style.backgroundColor = draggable.style.backgroundColor;
+            ghostBox.innerHTML = draggable.innerHTML;
             draggable.classList.add('dragging');
         })
 
@@ -33,7 +35,7 @@ function initDND() {
             //remove dragging class
             draggable.classList.remove('dragging');
             if (ghostBox.parentNode) {
-                ghostBox.parentNode.removeChild(ghostBox);
+                //ghostBox.parentNode.removeChild(ghostBox);
             }
         })
 
