@@ -16,6 +16,9 @@ const draggables = document.querySelectorAll('#boxes .box');
 //get the box container
 const container = document.getElementById('boxes');
 
+//get the box container
+const favs = document.getElementById('favourites');
+
 //initialise our drag and drop engine
 function initDND() {
     //create a ghost box div for representing where our box will end up
@@ -58,6 +61,14 @@ function initDND() {
             }
         })
     })
+
+    favs.addEventListener("dragover", (e) => {
+        e.preventDefault();
+    });
+
+    favs.addEventListener("drop", (e) => {
+        console.log('drop');
+    });
 }
 
 initDND();
